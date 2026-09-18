@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "name": "group1",
+  "version": "1.0.0",
+  "description": "Sia midterm",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agguussttiinnee/Group1_Section_B.git"
+  },
+  "author": "Noblesala, Carl Agustine S.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agguussttiinnee/Group1_Section_B/issues"
+  },
+  "homepage": "https://github.com/agguussttiinnee/Group1_Section_B#readme",
+  "keywords": []
+}
