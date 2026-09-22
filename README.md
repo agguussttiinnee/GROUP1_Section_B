@@ -23,6 +23,3 @@ Gretchen Hope Cabudbud
 -routes/reviews.routes.js
 -feature/gretchenhope-reviews
 
-
-
-module.exports = router;
