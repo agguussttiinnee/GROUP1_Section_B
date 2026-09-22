@@ -16,7 +16,7 @@
 ## 1. Examination Scenario & Architecture Overview
 In Systems Integration and Architecture, Application Programming Interfaces (APIs) serve as standardized software contracts that allow heterogeneous subsystems to communicate, share data, and trigger workflows seamlessly without exposing internal data structures or implementation mechanics.
 
-Your team has been commissioned to build a modular RESTful API gateway for an organizational management system. Starting from the classroom baseline server (`index.js` configured on port `1234`), your team will decouple and extend the application by organizing domain resources into dedicated router files using Express Router (`express.Router()`).
+Your team has been commissioned to build a modular RESTful API gateway for an organizational management system. Starting from the classroom baseline server (`index.js` configured on port `1234`), your team will decouple (clone) and extend the application by organizing domain resources into dedicated router files using Express Router (`express.Router()`).
 
 ### **Starter Baseline Code (`index.js`)**
 ```javascript
