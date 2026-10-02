@@ -114,3 +114,111 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router;
+
+
+
+src > databases > index.js >
+
+require('dotenv').config()
+const mysql = require('mysql2')
+
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: process.env.db_user,
+    password:process.env.db_password,
+    database: process.env.db_name
+})
+
+module.exports = { db }
+
+
+
+
+
+
+
+index.js
+
+const app = require('express')
+const { db } = require('./src/databases')
+const { getAllUsers, findById } = require('./src/controllers/users')
+
+//Server setup
+const server = app()
+server.listen(8807, '0.0.0.0', (err) => {
+    if (err) return console.error(err)
+    console.log(Server is running...)
+})
+
+
+db.connect((err) => {
+    if (err) return console.log(err)
+    console.log('Database is connected!')
+})
+
+server.use('/api/users', getAllUsers)
+server.use('/api/users/:id', findById)
+
+
+
+
+src > controllers > users.js
+
+const { db } = require ('../databases')
+
+exports.getAllUsers = (req, res) => {
+    db.query('SELECT * FROM users', (err, res) => {
+        if(err) return console.error(err)
+        res.json(result)
+    })
+}
+
+exports.findById = (req, res) => {
+    const { id } = req.params
+
+    db.query('SELECT * FROM users WHERE id = ?', [id], (err, res) => {
+        if(err) return console.error(err)
+        res.json(result)
+    })
+}
+
+module.exports = { db }
+
+
+
+src > models > users.js
+
+let test =[
+    {
+        id: 1,
+        name: "YES"
+    },
+    {
+        id: 2,
+        name: "NO"
+    }
+]
+
+const UserModel = {
+    findAll: (val) => {
+        if(!val) return test;
+        return users
+    },
+
+    findById: (id) => {
+        return users.find((val = val.id === id))
+    }
+}
+
+module.exports = UserModel
+
+
+
+
+
+
+.env
+
+db_user = ' '
+db_password = ' '
+db_name = ' '
