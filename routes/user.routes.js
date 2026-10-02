@@ -222,3 +222,24 @@ module.exports = UserModel
 db_user = ' '
 db_password = ' '
 db_name = ' '
+
+lib     response.js
+const isSuccess = (data) => {
+    return {
+        success: true,
+        error: false,
+        data,
+    }
+}
+
+const isError = (data) => {
+    return {
+        success: false,
+        error: true,
+        data,
+    }
+}
+
+const
+
+module.exports = { isSuccess, isError }
